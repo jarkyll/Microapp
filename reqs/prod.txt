@@ -1,3 +1,1 @@
 -r common.txt
-cssmin==0.1.4
-jsmin==2.0.3
