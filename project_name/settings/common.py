@@ -242,3 +242,7 @@ LOGGING = {
 WSGI_APPLICATION = 'wsgi.application'
 ########## END WSGI CONFIGURATION
 
+
+########## DJANGO TEST CONFIGURATION
+TEST_RUNNER = 'django.test.runner.DiscoverRunner'
+########## END DJANGO TEST CONFIGURATION
