@@ -1,8 +1,5 @@
 """Development settings and globals."""
 
-
-from os.path import join, normpath
-
 from common import *
 
 
@@ -46,15 +43,6 @@ CACHES = {
 ########## END CACHE CONFIGURATION
 
 
-########## CELERY CONFIGURATION
-# See: http://docs.celeryq.org/en/latest/configuration.html#celery-always-eager
-CELERY_ALWAYS_EAGER = True
-
-# See: http://docs.celeryproject.org/en/latest/configuration.html#celery-eager-propagates-exceptions
-CELERY_EAGER_PROPAGATES_EXCEPTIONS = True
-########## END CELERY CONFIGURATION
-
-
 ########## TOOLBAR CONFIGURATION
 # See: https://github.com/django-debug-toolbar/django-debug-toolbar#installation
 INSTALLED_APPS += (
@@ -70,6 +58,6 @@ MIDDLEWARE_CLASSES += (
 )
 
 # DEBUG_TOOLBAR_CONFIG = {
-#     'INTERCEPT_REDIRECTS': False,
+#     'DISABLE_PANELS': True,
 # }
 ########## END TOOLBAR CONFIGURATION
