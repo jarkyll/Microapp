@@ -44,8 +44,8 @@ MANAGERS = ADMINS
 # In almost all cases, this should be a SQLite database.
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.',
-        'NAME': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': normpath(join(DJANGO_ROOT, 'default.db')),
         'USER': '',
         'PASSWORD': '',
         'HOST': '',
@@ -235,18 +235,6 @@ LOGGING = {
     }
 }
 ########## END LOGGING CONFIGURATION
-
-
-# ########## CELERY CONFIGURATION
-# # See: http://celery.readthedocs.org/en/latest/configuration.html#celery-task-result-expires
-# CELERY_TASK_RESULT_EXPIRES = timedelta(minutes=30)
-#
-# # See: http://docs.celeryproject.org/en/master/configuration.html#std:setting-CELERY_CHORD_PROPAGATES
-# CELERY_CHORD_PROPAGATES = True
-#
-# # See: http://celery.github.com/celery/django/
-# setup_loader()
-# ########## END CELERY CONFIGURATION
 
 
 ########## WSGI CONFIGURATION
