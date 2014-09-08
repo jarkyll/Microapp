@@ -23,34 +23,34 @@ def _file_replace_all(file_name, find_string, repl_string):
 
 
 # RUN CODE
-if len(sys.argv) < 2:
-    print 'Error: Must provide project name!'
-    print 'Usage: python init_project.py [project_name]'
-    sys.exit(1)
 
-project_name = sys.argv[1]
+if __name__ == '__main__':
+    if len(sys.argv) < 2:
+        print 'Error: Must provide project name!'
+        print 'Usage: python init_project.py [project_name]'
+        sys.exit(1)
 
-print 'Beginning project setup...'
+    project_name = sys.argv[1]
 
-print '\t...generating secret key'
-secret_key = _generate_secret_key()
+    print 'Beginning project setup...'
 
-print '\t...injecting secret key'
-_file_replace_all('project_name/settings/common.py', '{{ secret_key }}', secret_key)
+    print '\t...generating secret key'
+    secret_key = _generate_secret_key()
 
-print '\t...renaming project directory'
-os.rename('project_name', project_name)
+    print '\t...injecting secret key'
+    _file_replace_all('project_name/settings/common.py', '{{ secret_key }}', secret_key)
 
-print '\t...fixing manage.py references'
-_file_replace_all('manage.py', '{{ project_name }}', project_name)
+    print '\t...renaming project directory'
+    os.rename('project_name', project_name)
 
-print '\t...fixing manage_prod.py references'
-_file_replace_all('manage_prod.py', '{{ project_name }}', project_name)
+    print '\t...fixing manage.py references'
+    _file_replace_all('manage.py', '{{ project_name }}', project_name)
 
-print '\t...fixing wsgi.py references'
-_file_replace_all('wsgi.py', '{{ project_name }}', project_name)
+    print '\t...fixing manage_prod.py references'
+    _file_replace_all('manage_prod.py', '{{ project_name }}', project_name)
 
-print '\t...attempting to add changes to git'
-os.system('git add --all')
+    print '\t...fixing wsgi.py references'
+    _file_replace_all('wsgi.py', '{{ project_name }}', project_name)
 
-print 'Project setup complete!'
+    print 'Project setup complete!'
+    

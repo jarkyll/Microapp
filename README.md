@@ -7,8 +7,10 @@ A modern Django (1.7) project skeleton, modified for SparkLab usage.
 Initial Project Setup
 =======
 
-TODO
-
+Fork the project and-or download this repository.  After setting up the virtual environment, run the following command:
+```
+python init_project.py [project_name]
+```
 
 Docs
 ====
