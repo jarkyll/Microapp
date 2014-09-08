@@ -1,0 +1,5 @@
+*.pyc
+.idea/*
+env/*
+default.db
+.DS_Store
